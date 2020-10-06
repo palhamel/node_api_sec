@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const Schema = mongoose.Schema;
 
@@ -20,3 +21,8 @@ export const UserSchema = new Schema({
     default: Date.now,
   },
 });
+
+// compare input pw with saved pw in db:
+UserSchema.methods.comparePassword = (password, hashPassword) => {
+  return bcrypt.compareSync(password, hashPassword);
+};

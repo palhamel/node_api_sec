@@ -44,5 +44,5 @@ app.get('/', (req, res) =>
 );
 
 app.listen(PORT, () =>
-    console.log(`your server is running on port ${PORT}`)
+    console.log(`Happy days! Your server is running on port ${PORT}`)
 );
